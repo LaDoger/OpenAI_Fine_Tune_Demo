@@ -2,10 +2,10 @@ import openai
 import tune # Get info from tune.py file
 
 
-### CHANGE THIS: Put your model id here ###
+### CHANGE THIS: Put your model id here
 fine_tuned_model = "ft:gpt-3.5-turbo-0613:********"
 
-### CHANGE THIS: Ask your question ###
+### CHANGE THIS: Ask your question
 question = "Write a poem!"
 
 # Get response
