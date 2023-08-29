@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     # Wait a while for OpenAI server to get ready
     print('Preparing to start fine-tuning job...')
-    time.sleep(10) # If still not ready, make it wait longer
+    time.sleep(15) # If still not ready, make it wait longer
 
     # Initiate Fine-Tuning process
     ftjob = openai.FineTuningJob.create(

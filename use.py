@@ -3,10 +3,12 @@ import tune # Get info from tune.py file
 
 
 ### CHANGE THIS: Put your model id here
-fine_tuned_model = "ft:gpt-3.5-turbo-0613:********"
+fine_tuned_model = "ft:gpt-3.5-turbo-0613:****::****"
 
-### CHANGE THIS: Ask your question
-question = "Write a poem!"
+# Let user ask question
+print('Please ask your question below.\n')
+question = input('Question: ')
+print(f'Answer: ', end='')
 
 # Get response
 openai.api_key = tune.OPENAI_API_KEY
@@ -15,7 +17,13 @@ completion = openai.ChatCompletion.create(
     messages=[
         {"role": "system", "content": tune.system_prompt},
         {"role": "user", "content": question}
-    ]
+    ],
+    stream = True
 )
-print(f'Q: {question}')
-print(f'A: {completion.choices[0].message.content}')
+
+# Print response with streaming
+for chunk in completion:
+    try:
+        print(chunk.choices[0].delta['content'], end='')
+    except:
+        print('')
