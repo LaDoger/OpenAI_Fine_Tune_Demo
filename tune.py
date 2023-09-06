@@ -54,8 +54,7 @@ examples = [
 ]
 
 
-if __name__ == "__main__":
-
+def main():
     # Construct dataset file
     with open('data.jsonl', 'w') as f:
         for q, a in examples:
@@ -88,3 +87,7 @@ if __name__ == "__main__":
     print(f'fine-tuning job:\n{ftjob}\n')
     print('You will later receive an email containing your model id.')
     print('Then, please proceed to `use.py` to test your model.')
+
+
+if __name__ == "__main__":
+    main()
