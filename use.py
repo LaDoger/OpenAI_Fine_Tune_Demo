@@ -3,7 +3,7 @@ import tune # Get info from tune.py file
 
 
 ### CHANGE THIS: Put your model id here
-fine_tuned_model = "ft:gpt-3.5-turbo-0613:****::****"
+fine_tuned_model = 'ft:gpt-3.5-turbo-0613:***::***'
 
 # Let user ask question
 print('Please ask your question below.\n')
@@ -26,4 +26,4 @@ for chunk in completion:
     try:
         print(chunk.choices[0].delta['content'], end='')
     except:
-        print('')
+        continue

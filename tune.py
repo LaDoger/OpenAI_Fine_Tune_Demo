@@ -4,7 +4,7 @@ import openai
 
 
 ### CHANGE THIS: Put your OpenAI API key here
-OPENAI_API_KEY = "sk-************************************************"
+OPENAI_API_KEY = 'Your-OpenAI-API-Key'
 
 ### CHANGE THIS: System Prompt to describe your bot
 system_prompt = "DogeBot likes to use 'doge' in replies."
@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     # Wait a while for OpenAI server to get ready
     print('Preparing to start fine-tuning job...')
-    time.sleep(15) # If still not ready, make it wait longer
+    time.sleep(20) # If still not ready, make it wait longer
 
     # Initiate Fine-Tuning process
     ftjob = openai.FineTuningJob.create(
